@@ -1,0 +1,14 @@
+<ul>
+    <li *ngFor="let ticket of ticketsList">
+        <app-ticket 
+            [id] = ticket.id
+            [imageUrl] = ticket.imageUrl
+            [title] = ticket.title
+            [description] = ticket.description
+            [count] = ticket.count
+            (ticketEdit) = "onEdit($event)"
+            (ticketDelete) = "onDelete($event)"
+        >
+        </app-ticket>
+    </li>
+</ul>
