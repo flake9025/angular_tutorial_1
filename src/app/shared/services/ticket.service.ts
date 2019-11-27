@@ -15,10 +15,10 @@ export class TicketService {
   }
 
   public edit(ticketId) {
-    console.log('TicketService::edit ' + ticketId);
+    console.log('TicketService::edit ', ticketId);
   }
 
   public delete(ticketId) {
-    console.log('TicketService::delete ' + ticketId);
+    console.log('TicketService::delete ', ticketId);
   }
 }

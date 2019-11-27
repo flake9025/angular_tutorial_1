@@ -1,5 +1,14 @@
 <h1>Liste des tickets</h1>
 
-<app-list-tickets [ticketsList]="myTickets" (ticketEdit)="onEdit($event)" (ticketDelete)="onDelete($event)">
-  Chargement ...
-</app-list-tickets>
+<div *ngIf="!isUserConnected">
+    <app-login (userConnected)="userConnected($event)">
+      Formulaire de login ...
+    </app-login>
+</div>
+
+<div *ngIf="isUserConnected">
+    <app-list-tickets [ticketsList]="myTickets" (ticketEdit)="onEdit($event)" (ticketDelete)="onDelete($event)">
+      Liste des tickets ...
+    </app-list-tickets>
+</div>
+

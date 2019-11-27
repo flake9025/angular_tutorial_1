@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Ticket } from '../shared/models/ticket';
+import { Ticket } from '../../models/ticket';
 
 @Component({
   selector: 'app-list-tickets',
@@ -8,7 +8,7 @@ import { Ticket } from '../shared/models/ticket';
 })
 export class ListTicketsComponent implements OnInit {
 
-  @Input() ticketsList : Array<Ticket>;
+  @Input() ticketsList: Array<Ticket>;
 
   @Output() ticketEdit = new EventEmitter();
   @Output() ticketDelete = new EventEmitter();

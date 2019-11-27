@@ -1,0 +1,21 @@
+<h1>Login</h1>
+<form [formGroup]="loginFormGroup" (ngSubmit)="login()">
+
+    <input type="pseudo" formControlName="pseudo" placeholder="Pseudo">
+    <br/>
+    <div *ngIf="
+        loginFormGroup.controls.pseudo.touched 
+        && !loginFormGroup.controls.pseudo.valid
+        && loginFormGroup.controls.pseudo.errors?.required">Pseudo obligatoire</div>
+    <br/>
+
+    <input type="password" formControlName="password" placeholder="Mot de passe">
+    <br/>
+    <div *ngIf="
+    loginFormGroup.controls.password.touched 
+    && !loginFormGroup.controls.password.valid
+    && loginFormGroup.controls.password.errors?.required">Mot de passe obligatoire</div>
+    <br/>
+
+    <input [disabled]="!loginFormGroup.valid" type="submit" value="Log in">
+</form>
